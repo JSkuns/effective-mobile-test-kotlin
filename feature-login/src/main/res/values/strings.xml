@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Курсы</string>
+    <string name="login_title">Вход</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Пароль</string>
+    <string name="btn_login">Войти</string>
+    <string name="btn_vk">ВОЙТИ ЧЕРЕЗ ВКОНТАКТЕ</string>
+    <string name="btn_ok">ВОЙТИ ЧЕРЕЗ ОДНОКЛАССНИКИ</string>
+    <string name="register">Регистрация</string>
+    <string name="forgot_password">Забыл пароль?</string>
+</resources>

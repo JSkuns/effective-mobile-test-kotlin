@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/background_card"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Баннер курса -->
+        <ImageView
+            android:id="@+id/ivBanner"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:background="@color/background_surface"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <!-- Рейтинг на баннере (ВНИЗУ СЛЕВА) -->
+        <TextView
+            android:id="@+id/tvRateOnBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_rating_badge"
+            android:drawableStart="@drawable/ic_star_green"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/ivBanner"
+            app:layout_constraintBottom_toBottomOf="@id/ivBanner"
+            tools:text="4.9" />
+
+        <!-- Дата на баннере (ВНИЗУ СПРАВА ОТ РЕЙТИНГА) -->
+        <TextView
+            android:id="@+id/tvDateOnBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="12dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/tvRateOnBanner"
+            app:layout_constraintBottom_toBottomOf="@id/ivBanner"
+            tools:text="22 Мая 2024" />
+
+        <!-- Закладка избранного (в правом верхнем углу баннера) -->
+        <ImageView
+            android:id="@+id/ivLike"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/bg_circle"
+            android:padding="6dp"
+            android:src="@drawable/ic_bookmark_border"
+            app:layout_constraintEnd_toEndOf="@id/ivBanner"
+            app:layout_constraintTop_toTopOf="@id/ivBanner"
+            app:tint="@color/white" />
+
+        <!-- Контент под баннером -->
+        <LinearLayout
+            android:id="@+id/llContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivBanner">
+
+            <!-- Заголовок -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Java-разработчик с нуля" />
+
+            <!-- Описание -->
+            <TextView
+                android:id="@+id/tvText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                tools:text="Освойте backend-разработку и программирование на Java..." />
+
+            <!-- Цена и кнопка Подробнее -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="999 ₽" />
+
+                <TextView
+                    android:id="@+id/tvMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Подробнее →"
+                    android:textColor="@color/primary"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
