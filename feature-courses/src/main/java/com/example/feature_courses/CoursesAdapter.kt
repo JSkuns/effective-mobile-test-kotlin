@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.core_network.model.Course
 import com.example.feature_courses.databinding.ItemCourseBinding
-import com.example.feature_courses.R
 
 class CoursesAdapter(
     private val onLikeClick: (Course) -> Unit
@@ -60,8 +59,10 @@ class CoursesAdapter(
         // Форматирование даты: "2024-05-22" → "22 Мая 2024"
         private fun formatDate(dateString: String): String {
             return try {
-                val inputFormat = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.getDefault())
-                val outputFormat = java.text.SimpleDateFormat("dd MMMM yyyy", java.util.Locale("ru"))
+                val inputFormat =
+                    java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.getDefault())
+                val outputFormat =
+                    java.text.SimpleDateFormat("dd MMMM yyyy", java.util.Locale("ru"))
                 val date = inputFormat.parse(dateString)
                 outputFormat.format(date!!)
             } catch (e: Exception) {
